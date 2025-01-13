@@ -11,15 +11,16 @@ tab1, tab2, tab3 = st.tabs(["Una neurona con una entrada (y un peso)",
 # Content for Tab 1
 with tab1:
     st.header("Una neurona con una entrada (y un peso)")
-    peso = 0.5
+    peso = st.number_input("Introduce el valor del peso")
     st.write(f"El peso de las entradas es {peso}")
     entrada = st.slider("Seleccione el valor de la entrada:", min_value=0.0, max_value=100.0, step=0.1, key="entrada_00")
     st.write(f"La salida de la neurona es {entrada * peso}")
 
 # Content for Tab 2
-with (tab2):
+with ((tab2)):
     st.header("Una neurona con dos entradas (y dos pesos)")
-    peso0, peso1 = 1.5, 2.5
+    peso0 = st.number_input("Introduce el valor del primer peso", key="peso_10")
+    peso1 = st.number_input("Introduce el valor del segundo peso", key="peso_11")
     st.write(f"Los pesos de las entradas son {peso0} y {peso1}")
     entrada0 = st.slider("Seleccione el valor de la entrada 0:", min_value=0.0, max_value=100.0, step=0.1, key="entrada_10")
     entrada1 = st.slider("Seleccione el valor de la entrada 1:", min_value=0.0, max_value=100.0, step=0.1, key="entrada_11")
@@ -27,7 +28,9 @@ with (tab2):
 # Content for Tab 3
 with tab3:
     st.header("Una neurona con tres entradas y bias (sesgo)")
-    peso0, peso1, peso2 = 1, 2, 3
+    peso0 = st.number_input("Introduce el valor del primer peso", key="peso_20")
+    peso1 = st.number_input("Introduce el valor del segundo peso", key="peso_21")
+    peso2 = st.number_input("Introduce el valor del tercer peso", key="peso_22")
     bias = 10
     st.write(f"Los pesos de las entradas son {peso0}, {peso1} y {peso2} y el bias es {bias}")
     entrada0 = st.slider("Seleccione el valor de la entrada 0:", min_value=0.0, max_value=100.0, step=0.1, key="entrada_20")
